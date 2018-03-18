@@ -1,0 +1,259 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;    
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    color: #111;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header {
+    background-color: #7479BD;
+    color: white;
+    position: relative;
+    width: 100%;
+}
+
+header h1 {
+    align-self: flex-start;
+    font-weight: normal;
+    padding: 0 1em;
+}
+
+
+header nav ul {
+    margin: 0;
+    padding: 0 1em;
+    color: white;
+}
+
+header nav.account ul li {
+    display: inline-block;
+    transition: all ease-out .1s;
+    align-self: center;
+}
+
+header nav.account a {
+    color: white;
+}
+
+nav {
+    background-color: #4d4d71;
+}
+
+nav ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+main nav {        
+    width: 20%;
+    z-index: 2;
+    text-align: center;
+}
+
+main nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+main nav li {
+    float: left;
+    padding: 1em;
+    position: relative;
+    margin: 0.75em 0    ;
+    width: 100%;
+}
+
+main nav li.active:before {
+    border-left: 3px;
+    border-radius: 3px;
+    background-color: #1efe1e;
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+}
+
+main nav li.active img {
+    opacity: 1;
+}
+
+main nav li img {
+    min-width: 20px;
+    opacity: 0.5;
+    max-width: 30px;
+}
+
+
+.search {
+    border-radius: 5px;
+    border: 1px solid #e4e2e2;
+    padding: 1em;
+    margin: 1em 0 1em 22%;
+    width: 76%;
+}
+
+.alert {
+    background-color: #7379bd;
+    border-radius: 5px;
+    color: white;    
+    padding: 0.5em;
+    text-align: left;
+}
+
+
+main {
+    background-color: #fbfbfb;    
+    display: flex;
+}
+
+main .tab {    
+    padding: 1em;
+    background-color: white;
+}
+
+main .tab__heading {
+    background-color: white;
+    color: #666666;
+    display: inline-block;
+    font-weight: normal;
+    margin-top: 0;
+    padding: 0;
+}
+
+.chart {
+    padding: 1em 0;
+}
+
+.chart__heading {
+    color: #aaa;    
+    display: inline-block;
+    font-size: 1em;
+    margin: 0;
+    padding: 0.25em 0;
+    text-transform: uppercase;    
+}
+
+.chart__menu {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+.chart__menu li {
+    float: left;
+    display: inline-block;    
+    padding: 0.25em 0.5em;
+}
+.chart__menu li a {
+    font-weight: 500;
+}
+
+.chart__menu li.active {
+    background-color: #83c891;    
+    border-radius: 1em;
+}
+.chart__menu li.active a {
+    color: #fff;
+}
+
+
+p {
+    max-width: 350px;
+    margin: 35px auto 0;
+    line-height: 2em;
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+    color: #39add1;
+    font-weight: 700;
+}
+
+a:hover {
+    color: #111;
+}
+
+
+
+@media (min-width: 426px) {
+    .logo__mobile {
+        display: none;
+    }
+    .logo__text {
+        display: inline-block;
+    }
+}
+
+main h2 {
+    font-size: 28px;
+}
+
+.corgi {
+    height: 170px;
+    width: 170px;
+    margin: 0 1em;
+    transition: all ease-in .5s;
+}
+
+.corgi:hover {
+    transform: rotate(720deg);
+}
+
+#corgi .nose_and_eyes {
+    fill: #2D3339;
+}
+
+#corgi .brows {
+    fill: #DA8058;
+}
+
+#corgi .white {
+    fill: #FBFEFF;
+}
+
+.sable.corgi {
+    fill: #B97F5B;
+}
+
+.fawn.corgi {
+    fill: #E9AA82;
+}
+
+.red.corgi {
+    fill: #834B29;
+}
+
+.stone.corgi {
+    fill: #52595E;
+}
+
+footer {
+    width: 100%;
+    margin-top: 100px;
+    padding-bottom: 30px;
+    color: #ba8058;
+}
