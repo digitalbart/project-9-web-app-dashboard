@@ -21,8 +21,9 @@
                     <li><a href=""><img src="icons/icon-settings.svg" alt=""></a></li>
                 </ul>
             </nav>
-            <!-- <input type="text" class="search" placeholder="search"> -->
+            
             <div class="tab">
+                <!--<input type="text" class="search" placeholder="search">-->
                 <h2 class="tab__heading">Dashboard</h2>
                 <div class="alert"><strong>Alert</strong> Sesame snaps apple pie pastry cookie oat cake gingerbread pastry tootsie roll chocolate. </div>
                 <div class="chart">
@@ -38,11 +39,14 @@
                     <canvas id="traffic_weekly" style="position: relative; height:40vh; width:80vw"></canvas>
       <!--               <canvas id="traffic_monthly" style="position: relative; height:40vh; width:80vw"></canvas> -->
                 </div><!-- end traffic -->
-                <div class="chart">
+                <div class="chart border">
                     <h2 class="chart__heading">Daily Traffic</h2>                
                     <canvas id="traffic_daily" style="position: relative; height:40vh; width:80vw"></canvas>      
-                </div><!-- end traffic -->                
-
+                </div><!-- end traffic daily -->                
+                <div class="chart border">
+                    <h2 class="chart__heading">Mobile Users</h2>                
+                    <canvas id="mobile_users" style="position: relative; height:40vh; width:80vw"></canvas>      
+                </div><!-- end mobile users -->     
 
             </div>
         </main>
@@ -83,6 +87,37 @@ var trafficWeekly = new Chart(trafficWeeklyChart, {
 
 var trafficDailyChart = document.getElementById("traffic_daily");
 var trafficDaily = new Chart(trafficDailyChart, {
+    options: {
+        legend: {
+            display: false
+        }
+    },
+    type: 'line',
+    data: {
+        labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-7", "18-24", "25-31"],
+        datasets: [{
+                data: [750, 1250, 1350, 1550, 1300, 1550, 1950, 1700, 2100, 1750, 2250],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderWidth: 1,
+                lineTension: 0,
+                pointStyle: 'circle'
+            }                 
+        ],
+    }
+});
+
+var mobileUsersChart = document.getElementById("mobile_users");
+var mobileUsers = new Chart(mobileUsersChart, {
     options: {
         legend: {
             display: false

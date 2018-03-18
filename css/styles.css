@@ -1,4 +1,4 @@
-*,
+*.*,
 *:before,
 *:after {
     box-sizing: border-box;
@@ -110,8 +110,8 @@ main nav li img {
     border-radius: 5px;
     border: 1px solid #e4e2e2;
     padding: 1em;
-    margin: 1em 0 1em 22%;
-    width: 76%;
+    margin: 1em;
+    width: 100%;
 }
 
 .alert {
@@ -119,17 +119,16 @@ main nav li img {
     border-radius: 5px;
     color: white;    
     padding: 0.5em;
+    margin: 1em;
     text-align: left;
 }
-
 
 main {
     background-color: #fbfbfb;    
     display: flex;
 }
 
-main .tab {    
-    padding: 1em;
+main .tab {        
     background-color: white;
 }
 
@@ -138,12 +137,12 @@ main .tab__heading {
     color: #666666;
     display: inline-block;
     font-weight: normal;
-    margin-top: 0;
+    margin: 0 0.5em;
     padding: 0;
 }
 
 .chart {
-    padding: 1em 0;
+    padding: 1em;
 }
 
 .chart__heading {
@@ -186,6 +185,14 @@ p {
     line-height: 2em;
     text-align: left;
 }
+
+.border {
+    border: 1px solid #e4e2e2;
+}
+.chart.border + .chart.border {
+    border-top: 0;
+}
+
 
 a {
     text-decoration: none;
