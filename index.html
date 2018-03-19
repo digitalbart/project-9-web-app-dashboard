@@ -6,67 +6,76 @@
     <title>Web App Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,600,700" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1><strong>Your</strong>App<sup>&trade;</sup></h1>
-        </header>
-        <main>
-            <nav>
-                <ul>
-                    <li class="active"><a href=""><img src="icons/icon-dashboard.svg" alt=""></a></li>
-                    <li><a href=""><img src="icons/icon-members.svg" alt=""></a></li>
-                    <li><a href=""><img src="icons/icon-visits.svg" alt=""></a></li>
-                    <li><a href=""><img src="icons/icon-settings.svg" alt=""></a></li>
-                </ul>
-            </nav>
-            <div class="tab">
-                <!--<input type="text" class="search" placeholder="search">-->
-                <h2 class="tab__heading">Dashboard</h2>
+    <header>
+        <h1><strong>Your</strong>App<sup>&trade;</sup></h1>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li class="active"><a href=""><img src="icons/icon-dashboard.svg" alt=""></a></li>
+                <li><a href=""><img src="icons/icon-members.svg" alt=""></a></li>
+                <li><a href=""><img src="icons/icon-visits.svg" alt=""></a></li>
+                <li><a href=""><img src="icons/icon-settings.svg" alt=""></a></li>
+            </ul>
+        </nav>
+        <div class="panel">
+            <h2 class="panel__heading">Dashboard</h2>
+            <input type="text" class="search" placeholder="search">
+            <div class="panel__main">
                 <div class="alert"><strong>Alert</strong> Sesame snaps apple pie pastry cookie oat cake gingerbread pastry tootsie roll chocolate. </div>
-                <div class="chart">
-                    <h2 class="chart__heading">Traffic</h2>
-                    <ul class="chart__menu">
-                        <li><a href="">Hourly</a></li>
-                        <li><a href="">Daily</a></li>
-                        <li class="active"><a href="">Weekly</a></li>
-                        <li><a href="">Monthly</a></li>
-                    </ul>
-                    <!--                     <canvas id="traffic_hourly" style="position: relative; height:40vh; width:80vw"></canvas>
-                    <canvas id="traffic_daily" style="position: relative; height:40vh; width:80vw"></canvas> -->
-                    <canvas id="traffic_weekly" style="position: relative; height:40vh; width:80vw"></canvas>
-                    <!--               <canvas id="traffic_monthly" style="position: relative; height:40vh; width:80vw"></canvas> -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="chart">
+                            <h2 class="chart__heading">Traffic</h2>
+                            <ul class="chart__menu">
+                                <li><a href="">Hourly</a></li>
+                                <li><a href="">Daily</a></li>
+                                <li class="active"><a href="">Weekly</a></li>
+                                <li><a href="">Monthly</a></li>
+                            </ul>
+                            <!--                     <canvas id="traffic_hourly" style="position: relative; height:40vh; width:80vw"></canvas>
+                      <canvas id="traffic_daily" style="position: relative; height:40vh; width:80vw"></canvas> -->
+                            <canvas id="traffic_weekly" style="position: relative; height:40vh; width:80vw"></canvas>
+                            <!--               <canvas id="traffic_monthly" style="position: relative; height:40vh; width:80vw"></canvas> -->
+                        </div>
+                    </div>
                 </div>
                 <!-- end traffic -->
-                <div class="chart border">
-                    <h2 class="chart__heading">Daily Traffic</h2>
-                    <canvas id="traffic_daily" style="position: relative; height:40vh; width:80vw"></canvas>
-                </div>
-                <!-- end traffic daily -->
-                <div class="chart border">
-                    <h2 class="chart__heading">Mobile Users</h2>
-                    <canvas id="mobile_users" style="position: relative; height:40vh; width:80vw"></canvas>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="chart border">
+                            <h2 class="chart__heading">Daily Traffic</h2>
+                            <canvas id="traffic_daily" style="position: relative; height:40vh; width:80vw"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="chart border">
+                            <h2 class="chart__heading">Mobile Users</h2>
+                            <canvas id="mobile_users" style="position: relative; height:40vh; width:80vw"></canvas>
+                        </div>
+                    </div>
                 </div>
                 <!-- end mobile users -->
-                <div class="chart">
-                    <h2 class="chart__heading">Social</h2>
-                    <div class="social">
+                <div class="row">
+                    <div class="col-4 social">
                         <div class="circle">
                             <!-- twitter goes here -->
                         </div>
                         <h3 class="social__heading">Twitter</h3>
                         <span class="social__stats">10,345</span>
                     </div>
-                    <div class="social">
+                    <div class="col-4 social">
                         <div class="circle">
                             <!-- twitter goes here -->
                         </div>
                         <h3 class="social__heading">Facebook</h3>
                         <span class="social__stats">8,739</span>
                     </div>
-                    <div class="social">
+                    <div class="col-4 social">
                         <div class="circle">
                             <!-- twitter goes here -->
                         </div>
@@ -76,9 +85,9 @@
                 </div>
                 <!-- end of social media -->
                 <!-- new members -->
-                <div class="chart border">
-                    <h2 class="chart__heading">New Members</h2>
-                    <div class="block">
+                <div class="row border">
+                    <!--<h2 class="chart__heading">New Members</h2>-->
+                    <div class="col-12 block">
                         <img src="https://randomuser.me/api/?gender=female" alt="">
                         <div>
                             <h2>Victoria Chambers</h2>
@@ -86,7 +95,7 @@
                             <span>10/15/15</span>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="col-12 block">
                         <img src="https://randomuser.me/api/?gender=female" alt="">
                         <div>
                             <h2>Victoria Chambers</h2>
@@ -94,7 +103,7 @@
                             <span>10/15/15</span>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="col-12 block">
                         <img src="https://randomuser.me/api/?gender=female" alt="">
                         <div>
                             <h2>Victoria Chambers</h2>
@@ -102,7 +111,7 @@
                             <span>10/15/15</span>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="col-12 block">
                         <img src="https://randomuser.me/api/?gender=female" alt="">
                         <div>
                             <h2>Victoria Chambers</h2>
@@ -113,9 +122,9 @@
                 </div>
                 <!-- end new members -->
                 <!-- member activity -->
-                <div class="chart border">
+                <div class="row border">
                     <h2 class="chart__heading">Member Activity</h2>
-                    <div class="block">
+                    <div class="col-12 block">
                         <img src="https://randomuser.me/api/?gender=female" alt="">
                         <div>
                             <h2>Victoria Chambers</h2>
@@ -123,7 +132,7 @@
                             <span>4 hours ago</span>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="col-12 block">
                         <img src="https://randomuser.me/api/?gender=female" alt="">
                         <div>
                             <h2>Victoria Chambers</h2>
@@ -131,7 +140,7 @@
                             <span>5 hours ago</span>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="col-12 block">
                         <img src="https://randomuser.me/api/?gender=female" alt="">
                         <div>
                             <h2>Victoria Chambers</h2>
@@ -139,7 +148,7 @@
                             <span>6 hours ago</span>
                         </div>
                     </div>
-                    <div class="block">
+                    <div class="col-12 block">
                         <img src="https://randomuser.me/api/?gender=female" alt="">
                         <div>
                             <h2>Victoria Chambers</h2>
@@ -148,9 +157,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- end member activity -->                
-        </main>
-        </div>
+                <!-- end member activity -->
+    </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
