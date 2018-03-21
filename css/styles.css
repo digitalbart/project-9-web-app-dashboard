@@ -1,9 +1,12 @@
-*.*,
-*:before,
-*:after {
-    box-sizing: border-box;
+/**
+ *  International box-sizing Awareness Day
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ */ 
+*, *:before, *:after {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box;
 }
-
 
 /** simple grid */
 
@@ -119,7 +122,9 @@ nav ul {
 
 main nav {
     text-align: center;
-    width: 20%;
+    min-width: 40px;
+    max-width: 100px;    
+    width: calc(100% / 12 * 2);
 }
 
 main nav ul {
@@ -188,7 +193,7 @@ main {
     background-color: #fbfbfb;
     margin: 0;
     position: relative;
-    width: 80%;
+    width: 100%;
 }
 
 .panel__heading {
@@ -211,15 +216,15 @@ main {
     z-index: 0;
 }
 
-.chart {
+.chart canvas {
     padding: 1em;
 }
 
-.chart__heading {
+.heading {
     color: #aaa;
     display: inline-block;
     font-size: 10px;
-    margin: 0;
+    margin: 2em 0 0 2em;
     padding: 0;
     text-transform: uppercase;
 }
@@ -228,7 +233,7 @@ main {
     list-style-type: none;
     display: inline-block;
     margin: 0;
-    padding: 0;
+    padding: 1em;
     float: right;
     line-height: 1.3em;
 }
@@ -269,15 +274,26 @@ p {
     border: 1px solid #e4e2e2;
 }
 
+.row .border ~ .row .border  {
+    border-top: 0;
+}
+
+[class^="col-"]:nth-child(n+2).border {
+    margin-left: -1px;    
+}
+
 .chart.border+.chart.border {
     border-top: 0;
 }
 
 .social {
-    border:0;
-    padding: 0;
-    border-radius: 0;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin: 1em 1em 2em;
+    padding: 1em;
 }
+
 
 svg {
     display: none;
@@ -288,11 +304,17 @@ svg {
     background-color: #4d4d71;
     margin: 0;
     vertical-align: text-top;
+    fill: white;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 1em;
 }
 
 .social__heading {
     display: block;
-    color: #ccc;
+    color: #7379bd;
     font-weight: bold;
     text-transform: uppercase;
     margin: 0;
@@ -317,38 +339,114 @@ svg {
  * media block
  */
 
+.block__wrapper {
+    margin: 0;
+    padding: 1em 2em;
+}
+
 .block {
-    overflow: hidden;
-    padding: 1rem;
-    margin: 0 0 1rem -1rem;
+    overflow: hidden;  
+    position: relative;  
+    margin:0;
     border-bottom: 1px solid #ddd;
-    width: calc(100%);
+    width: calc(100%);   
+    padding-bottom: 1em; 
+}
+
+.block__wrapper:last-child .block {
+    border-bottom: 0;
 }
 
 .block img {
-    width: 75px;
-    height: 75px;
+    width: 40px;
+    height: 40px;
     float: left;
     margin: 0 1rem 0 0;
     border-radius: 100%
 }
-
 .block p {
     margin: 0 auto 0;
     overflow-wrap: break-word;
+    padding-top: 0;
+    line-height: 1em;
+    font-size: 12px;
+}
+
+.block a {
+    font-weight: 300;
+    font-size: 12px;
 }
 
 .block h2 {
     font-weight: 500;
-    font-size: 100%;
-    margin: 0 0 0.5rem 0;
+    font-size: 12px;
+    margin: 0;
     text-transform: capitalize;
 }
 
-.block>div {
-    padding-left: calc(75px + 1rem);
+.block span {
+    font-size: 10px;
+    /** add media query */
+    position: absolute;
+    right: 0;
+    top: 1em;
 }
 
+.block>div {
+    padding-left: calc(40px + 1em);
+}
+
+form.form {
+    padding: 1em;    
+}
+
+.form input,
+.form select,
+.form textarea {
+    display: block;    
+    border-radius: 5px;
+    padding: 1em;
+    background-color: #eee;
+    border: 1px solid #ccc;   
+    margin: 1em 0; 
+    width: 100%;
+}
+
+button {
+    margin: 0;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    background-color: #7379bd;
+    color: #fff;
+    width: 100%;
+    border-radius: 5px;
+    width: calc(100%);
+    border: 0;
+}
+
+
+.switch-ios.switch-light {
+    position: relative;
+    display: block;
+    margin: 1em 0 auto;
+    width: 90%;
+}
+
+.switch-ios.switch-light:first-child {
+    margin-top: 0.75em;
+    }
+
+.switch-ios.switch-light > span {
+    width: 100px;
+    float: right;
+}
+.switch-ios.switch-light strong {
+    display: inline;
+    float: left;
+    margin:0 1em;
+    vertical-align: initial;
+    line-height: 2em;
+}
 
 
 a {
