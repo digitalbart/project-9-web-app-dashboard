@@ -358,26 +358,26 @@
 
   var new_members = {};
   /** get some random users  */
-  fetch('https://randomuser.me/api?&inc=gender,name,picture,email,registered&results=8&nat=US')
+  fetch('https://randomuser.me/api?&inc=gender,name,picture,email,registered&results=9&nat=US')
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
       //console.log(myJson);
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < 9; i++) {
           var name = data.results[i]['name']['first'] + " " + data.results[i]['name']['last'];
-
-          if (i===0) {
-            document.querySelectorAll('.account img')[i].src = data.results[i]['picture']['medium'];  
-            document.querySelectorAll('.account span')[i].innerHTML = name;  
-          } else {
           
+          if (i < 8 ) {
             document.querySelectorAll('.block img')[i].src = data.results[i]['picture']['medium'];
             document.querySelectorAll('.block h2')[i].innerHTML = name;
             if (i < 4) {
               document.querySelectorAll('.block a')[i].innerHTML = data.results[i]['email'];
             }
             document.querySelectorAll('.block span')[i].innerHTML = moment(data.results[i]['registered']).format('MM/DD/YYYY');
+          
+          } else {
+            document.querySelectorAll('.account img')[0].src = data.results[i]['picture']['medium'];  
+            document.querySelectorAll('.account span')[0].innerHTML = name; 
           }
           //document.querySelectorAll('.block p')[i].prepend(name + " ");
         }        
