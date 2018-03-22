@@ -1,12 +1,16 @@
 /**
  *  International box-sizing Awareness Day
  * https://css-tricks.com/international-box-sizing-awareness-day/
- */ 
-*, *:before, *:after {
-  -webkit-box-sizing: border-box; 
-  -moz-box-sizing: border-box; 
-  box-sizing: border-box;
+ */
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 
 /** simple grid */
 
@@ -19,7 +23,8 @@
 
     [class^="col-"] {
         float: left;
-        padding: 0 ; /* 1rem figure out */
+        padding: 0;
+        /* 1rem figure out */
     }
 
     .col-1 {
@@ -95,21 +100,37 @@ header h1 {
 }
 
 
-header nav ul {
-    margin: 0;
-    padding: 0 1em;
+
+.account {
     color: white;
+    padding: 0 1em 0 0;
+    text-transform: capitalize;    
+    font-weight: 500;
+}
+.account span {
+    display: inline-block;    
+    }
+.account img {
+    width: 35px;
+    height: 35px;    
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 0.5em;
 }
 
-header nav.account ul li {
-    display: inline-block;
-    transition: all ease-out .1s;
-    align-self: center;
+.notify {
+    border-right: 1px solid #4d4d71;
+    margin-right: 0.5em;
+    padding: 0.75em;
 }
 
-header nav.account a {
-    color: white;
+.notify img {
+    height: 20px;
+    vertical-align: middle;
+    padding: 0 0.25em;
 }
+
+
 
 nav {
     background-color: #4d4d71;
@@ -123,7 +144,7 @@ nav ul {
 main nav {
     text-align: center;
     min-width: 40px;
-    max-width: 100px;    
+    max-width: 100px;
     width: calc(100% / 12 * 2);
 }
 
@@ -234,10 +255,11 @@ main {
 .heading {
     color: #aaa;
     display: inline-block;
-    font-size: 10px;
-    margin: 2em 0 0 2em;
+    font-size: 1em;
+    margin: 1em 0 0 1em;
     padding: 0;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 .chart__menu {
@@ -287,7 +309,7 @@ p {
 }
 
 [class^="col-"]:nth-child(n+2).border {
-    margin-left: -1px;    
+    margin-left: -1px;
 }
 
 .chart.border+.chart.border {
@@ -342,7 +364,6 @@ svg {
 }
 
 
-
 /**
  * media block
  */
@@ -353,12 +374,12 @@ svg {
 }
 
 .block {
-    overflow: hidden;  
-    position: relative;  
-    margin:0;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
     border-bottom: 1px solid #ddd;
-    width: calc(100%);   
-    padding-bottom: 1em; 
+    width: calc(100%);
+    padding-bottom: 1em;
 }
 
 .block__wrapper:last-child .block {
@@ -372,6 +393,7 @@ svg {
     margin: 0 1rem 0 0;
     border-radius: 100%
 }
+
 .block p {
     margin: 0 auto 0;
     overflow-wrap: break-word;
@@ -405,18 +427,18 @@ svg {
 }
 
 form.form {
-    padding: 1em;    
+    padding: 1em;
 }
 
 .form input,
 .form select,
 .form textarea {
-    display: block;    
+    display: block;
     border-radius: 5px;
     padding: 1em;
     background-color: #eee;
-    border: 1px solid #ccc;   
-    margin: 1em 0; 
+    border: 1px solid #ccc;
+    margin: 1em 0;
     width: 100%;
 }
 
@@ -440,8 +462,8 @@ button {
     margin: 0 1em 0 0;
 }
 
-.button__start,    
-.button__end {    
+.button__start,
+.button__end {
     width: calc(100% - 1em);
 }
 
@@ -450,14 +472,14 @@ button.cancel {
 }
 
 .success {
-  background-color: #b2b2b2;
-  border: 1px solid #ddd;
-  color: #fff;
-  margin: 1em;
-  opacity:0;
-  padding: 2em;
-  transition:opacity 1s linear; 
-  border-radius: 5px;   
+    background-color: #b2b2b2;
+    border: 1px solid #ddd;
+    color: #fff;
+    margin: 1em;
+    opacity: 0;
+    padding: 2em;
+    transition: opacity 1s linear;
+    border-radius: 5px;
 }
 
 .success.sent {
@@ -474,26 +496,28 @@ button.cancel {
 
 .switch-ios.switch-light:first-child {
     margin-top: 0.75em;
-    }
+}
 
-.switch-ios.switch-light > span {
+.switch-ios.switch-light>span {
     width: 100px;
     float: right;
 }
+
 .switch-ios.switch-light strong {
     display: inline;
     float: left;
-    margin:0 1em;
+    margin: 0;
     vertical-align: initial;
     line-height: 2em;
 }
 
-.switch-ios.switch-light input:checked ~ span {
+.switch-ios.switch-light input:checked~span {
     border-color: #7379bd;
     box-shadow: inset 0 0 0 30px #7379bd;
 }
-.switch-ios.switch-light input:checked ~ span a {    
-    border-color: #7379bd;    
+
+.switch-ios.switch-light input:checked~span a {
+    border-color: #7379bd;
 }
 
 
@@ -522,7 +546,6 @@ a:hover {
 main h2 {
     font-size: 28px;
 }
-
 
 footer {
     width: 100%;

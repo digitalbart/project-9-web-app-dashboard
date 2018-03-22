@@ -11,6 +11,10 @@
 <body>
     <header>
         <h1><strong>Your</strong>App<sup>&trade;</sup></h1>
+        <div>
+          <a href="" class="notify"><img src="icons/icon-bell.svg" alt="Alerts"></a>
+          <a href="" class="account"> <img src="" class="account__avatar"><span>Josh Sullivan</span></a>
+        </div>
     </header>
     <main>
         <nav>
@@ -362,13 +366,19 @@
       //console.log(myJson);
         for (var i = 0; i < 8; i++) {
           var name = data.results[i]['name']['first'] + " " + data.results[i]['name']['last'];
-          console.log(name);
-          document.querySelectorAll('.block img')[i].src = data.results[i]['picture']['medium'];
-          document.querySelectorAll('.block h2')[i].innerHTML = name;
-          if (i < 4) {
-            document.querySelectorAll('.block a')[i].innerHTML = data.results[i]['email'];
+
+          if (i===0) {
+            document.querySelectorAll('.account img')[i].src = data.results[i]['picture']['medium'];  
+            document.querySelectorAll('.account span')[i].innerHTML = name;  
+          } else {
+          
+            document.querySelectorAll('.block img')[i].src = data.results[i]['picture']['medium'];
+            document.querySelectorAll('.block h2')[i].innerHTML = name;
+            if (i < 4) {
+              document.querySelectorAll('.block a')[i].innerHTML = data.results[i]['email'];
+            }
+            document.querySelectorAll('.block span')[i].innerHTML = moment(data.results[i]['registered']).format('MM/DD/YYYY');
           }
-          document.querySelectorAll('.block span')[i].innerHTML = moment(data.results[i]['registered']).format('MM/DD/YYYY');
           //document.querySelectorAll('.block p')[i].prepend(name + " ");
         }        
     });
