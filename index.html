@@ -216,11 +216,12 @@
                 <div class="row">
                     <div class="col-6 border">
                         <h2 class="heading">Message User</h2>
-                        <form action="" class="form">
-                            <input type="text" placeholder="Search for User">
-                            <textarea name="" id="" rows="10" placeholder="Message for User"></textarea>
+                        <form action="" class="form member_search">
+                            <input type="text" name="user" placeholder="Search for User">
+                            <textarea name="message" rows="10" placeholder="Message for User"></textarea>
                             <button name="send_message">Send</button>
                         </form>
+                        <p class='success'>Thanks, your message has sent. <a href="">Click to Send Another</a></p>
                     </div>
                     <div class="col-6 border">
                         <h2 class="heading">Settings</h2>
@@ -255,10 +256,10 @@
                             
                             <div class="row">
                               <div class="col-6">
-                                  <button name="send_message">Send</button>
+                                  <button class="button__start send" name="send_message">Send</button>
                               </div>
                               <div class="col-6">
-                                  <button name="send_message">Send</button>
+                                  <button class="button__end cancel" name="send_message">Cancel</button>
                               </div>
                             </div>
                         </form>
@@ -266,123 +267,136 @@
                 </div>
     </main>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 <script>
-var trafficWeeklyChart = document.getElementById("traffic_weekly");
-var trafficWeekly = new Chart(trafficWeeklyChart, {
-    options: {
-        legend: {
-            display: false
-        }
-    },
-    type: 'line',
-    data: {
-        labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-7", "18-24", "25-31"],
-        datasets: [{
-            data: [750, 1250, 1350, 1550, 1300, 1550, 1950, 1700, 2100, 1750, 2250],
-            borderColor: [
-                '#7379bd'
-            ],
-            backgroundColor: '#e2e3f5',
-            borderWidth: 1,
-            lineTension: 0,
-            pointStyle: 'circle'
-        }],
-    }
-});
 
-var trafficDailyChart = document.getElementById("traffic_daily");
-var trafficDaily = new Chart(trafficDailyChart, {
-    options: {
-        legend: {
-            display: false
-        }
-    },
-    type: 'bar',
-    data: {
-        labels: ["S", "M", "T", "W", "Th", "F", "S"],
-        datasets: [{
-            data: [75, 150, 130, 150, 130, 200, 220],
-            borderColor: [
-                '#4d4d71'
-            ],
-            backgroundColor: '#4d4d71',
-            borderWidth: 0,
-            borderRadius: 5,
-            lineTension: 0,
-            pointStyle: 'circle'
-        }],
-    }
-});
+  var trafficWeeklyChart = document.getElementById("traffic_weekly");
+  var trafficWeekly = new Chart(trafficWeeklyChart, {
+      options: {
+          legend: {
+              display: false
+          }
+      },
+      type: 'line',
+      data: {
+          labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-7", "18-24", "25-31"],
+          datasets: [{
+              data: [750, 1250, 1350, 1550, 1300, 1550, 1950, 1700, 2100, 1750, 2250],
+              borderColor: [
+                  '#7379bd'
+              ],
+              backgroundColor: '#e2e3f5',
+              borderWidth: 1,
+              lineTension: 0,
+              pointStyle: 'circle'
+          }],
+      }
+  });
 
-var mobileUsersChart = document.getElementById("mobile_users");
-var mobileUsers = new Chart(mobileUsersChart, {
+  var trafficDailyChart = document.getElementById("traffic_daily");
+  var trafficDaily = new Chart(trafficDailyChart, {
+      options: {
+          legend: {
+              display: false
+          }
+      },
+      type: 'bar',
+      data: {
+          labels: ["S", "M", "T", "W", "Th", "F", "S"],
+          datasets: [{
+              data: [75, 150, 130, 150, 130, 200, 220],
+              borderColor: [
+                  '#4d4d71'
+              ],
+              backgroundColor: '#4d4d71',
+              borderWidth: 0,
+              borderRadius: 5,
+              lineTension: 0,
+              pointStyle: 'circle'
+          }],
+      }
+  });
 
-    type: 'doughnut',
-    data: {
-        labels: ["Phones", "Tablets", "Desktops"],
-        datasets: [{
-            data: [18, 17, 65],
-            backgroundColor: [
-                '#83c891',
-                '#76b1be',
-                '#7379bd'
-            ],
-            borderWidth: 1,
-            lineTension: 0,
-            pointStyle: 'circle'
-        }],
-    }
-});
+  var mobileUsersChart = document.getElementById("mobile_users");
+  var mobileUsers = new Chart(mobileUsersChart, {
+      type: 'doughnut',
+      data: {
+          labels: ["Phones", "Tablets", "Desktops"],
+          datasets: [{
+              data: [18, 17, 65],
+              backgroundColor: [
+                  '#83c891',
+                  '#76b1be',
+                  '#7379bd'
+              ],
+              borderWidth: 1,
+              lineTension: 0,
+              pointStyle: 'circle'
+          }],
+      },
+  });
 
-function formatDate(date) {
-    var monthNames = [
-        "January", "February", "March",
-        "April", "May", "June", "July",
-        "August", "September", "October",
-        "November", "December"
-    ];
+  function formatDate(date) {
+      var monthNames = [
+          "January", "February", "March",
+          "April", "May", "June", "July",
+          "August", "September", "October",
+          "November", "December"
+      ];
 
-    var day = date.getDate();
-    var monthIndex = date.getMonth();
-    var year = date.getFullYear();
+      var day = date.getDate();
+      var monthIndex = date.getMonth();
+      var year = date.getFullYear();
 
-    return day + ' ' + monthNames[monthIndex] + ' ' + year;
-}
+      return day + ' ' + monthNames[monthIndex] + ' ' + year;
+  }
 
-$(function() {
-
-    var new_members = {};
-    $.ajax({
-        url: 'https://randomuser.me/api?&inc=gender,name,picture,email,registered&results=8&nat=US',
-        dataType: 'json',
-        success: function(data) {
-            console.log();
-
-            for (var i = 0; i < 8; i++) {
-                var name = data.results[i]['name']['first'] + " " + data.results[i]['name']['last'];
-                $('.block img').eq(i).attr('src', data.results[i]['picture']['medium']);
-                $('.block h2').eq(i).html(name);
-                $('.block a').eq(i).html(data.results[i]['email']);
-                $('.block span').eq(i).html(moment(data.results[i]['registered']).format('MM/DD/YYYY'));
-                $('.block p').eq(i).prepend(name + " ");
-            }
-        }
+  var new_members = {};
+  /** get some random users  */
+  fetch('https://randomuser.me/api?&inc=gender,name,picture,email,registered&results=8&nat=US')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      //console.log(myJson);
+        for (var i = 0; i < 8; i++) {
+          var name = data.results[i]['name']['first'] + " " + data.results[i]['name']['last'];
+          console.log(name);
+          document.querySelectorAll('.block img')[i].src = data.results[i]['picture']['medium'];
+          document.querySelectorAll('.block h2')[i].innerHTML = name;
+          if (i < 4) {
+            document.querySelectorAll('.block a')[i].innerHTML = data.results[i]['email'];
+          }
+          document.querySelectorAll('.block span')[i].innerHTML = moment(data.results[i]['registered']).format('MM/DD/YYYY');
+          //document.querySelectorAll('.block p')[i].prepend(name + " ");
+        }        
     });
-});
 
-// template
-const new_members = `
-  <div class="block">
-    <img src="https://randomuser.me/api/?gender=female" alt="">
-    <div>
-      <h2>Victoria Chambers</h2>
-      <p><a href="">victoria.chambers@example.com</a></p>
-      <span>10/15/15</span>
-    </div>
-  </div>`;
+  document.querySelectorAll('form.member_search')[0].addEventListener('submit', function(evt){
+      evt.preventDefault();
+
+      let _errors = "";
+      if (document.querySelector('[name="user"]').value < 1) {
+        _errors += "Please enter a username to send a message to. \n\n";
+      }
+      if (document.querySelector('[name="message"]').value < 1) {
+        _errors += "Please enter a message to send to the user. \n\n";
+      }
+      // let user know if there are errors
+      if (_errors != '') {        
+        alert(_errors);
+      } else {
+        document.querySelector('[name="user"]').style.display = 'none';
+        document.querySelector('[name="message"]').style.display = 'none';
+        document.querySelectorAll('form.member_search button')[0].style.display = 'none';  
+
+        document.querySelectorAll('.success')[0].className = 'success sent';          
+      }
+
+      
+  });    
+
+
 </script>
-
 </html>

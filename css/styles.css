@@ -241,7 +241,7 @@ main {
 .chart__menu li {
     float: left;
     display: inline-block;
-    padding: 0.25em 0.5em;
+    padding: 0 0.5em;
     font-size: 10px;
 }
 
@@ -253,6 +253,7 @@ main {
     background-color: #83c891;
     border-radius: 1em;
     font-weight: bold;
+    padding: 0 1em;
 }
 
 .chart__menu li.active a {
@@ -272,10 +273,6 @@ p {
 
 .border {
     border: 1px solid #e4e2e2;
-}
-
-.row .border ~ .row .border  {
-    border-top: 0;
 }
 
 [class^="col-"]:nth-child(n+2).border {
@@ -424,6 +421,38 @@ button {
     border: 0;
 }
 
+.button__end {
+    margin: 0 0 0 1em;
+}
+
+.button__start {
+    margin: 0 1em 0 0;
+}
+
+.button__start,    
+.button__end {    
+    width: calc(100% - 1em);
+}
+
+button.cancel {
+    background-color: #b2b2b2;
+}
+
+.success {
+  background-color: #b2b2b2;
+  border: 1px solid #ddd;
+  color: #fff;
+  margin: 1em;
+  opacity:0;
+  padding: 2em;
+  transition:opacity 1s linear; 
+  border-radius: 5px;   
+}
+
+.success.sent {
+    opacity: 1;
+}
+
 
 .switch-ios.switch-light {
     position: relative;
@@ -447,6 +476,15 @@ button {
     vertical-align: initial;
     line-height: 2em;
 }
+
+.switch-ios.switch-light input:checked ~ span {
+    border-color: #7379bd;
+    box-shadow: inset 0 0 0 30px #7379bd;
+}
+.switch-ios.switch-light input:checked ~ span a {    
+    border-color: #7379bd;    
+}
+
 
 
 a {
