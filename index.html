@@ -390,12 +390,14 @@
         document.querySelector('[name="user"]').style.display = 'none';
         document.querySelector('[name="message"]').style.display = 'none';
         document.querySelectorAll('form.member_search button')[0].style.display = 'none';  
-
         document.querySelectorAll('.success')[0].className = 'success sent';          
       }
+  }); 
 
-      
-  });    
+  document.querySelectorAll('.alert')[0].addEventListener('click', function(evt){
+    evt.preventDefault();
+    this.style.display = 'none';
+  });          
 
 
 </script>

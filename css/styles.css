@@ -179,9 +179,20 @@ main nav li img {
     background-color: #7379bd;
     border-radius: 5px;
     color: white;
-    padding: 0.5em;
+    cursor: pointer;
     margin: 1em 1em 0;
+    padding: 0.5em;
+    position: relative;
     text-align: left;
+}
+
+.alert::after {
+    content: "\00d7";
+    display: inline-block;
+    font-size: 20px;
+    position: absolute;
+    right: 14px;
+    top: 5px;
 }
 
 main {
