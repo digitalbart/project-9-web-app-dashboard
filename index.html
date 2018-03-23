@@ -11,9 +11,9 @@
 <body>
     <header>
         <h1><strong>Your</strong>App<sup>&trade;</sup></h1>
-        <div>
-          <a href="" class="notify"><img src="icons/icon-bell.svg" alt="Alerts"></a>
-          <a href="" class="account"> <img src="" class="account__avatar"><span>Josh Sullivan</span></a>
+        <div class="account">
+          <a href="" class="account__notify"><img src="icons/icon-bell.svg" alt="Alerts"></a>
+          <a href="" class="account__avatar"> <img src=""><span>Josh Sullivan</span></a>
         </div>
     </header>
     <main>
@@ -171,51 +171,47 @@
                         </div>
                     </div>
                     <!-- end 6 -->
-                    <div class="col-6 border">
+                    <div class="col-6 border activity">
                         <h2 class="heading">Recent Activity</h2>
                         <div class="block__wrapper">
                             <div class="block">
                                 <img src="https://randomuser.me/api/?gender=female" alt="">
-                                <div>
-                                    <h2>Victoria Chambers</h2>
-                                    <p>commented on your apps' SEO</p>
-                                    <span>10/15/15</span>
+                                <div>                                    
+                                    <p><span class="block__member">Victoria Chambers</span> commented on your apps' SEO</p>
+                                    <strong>1 hour ago</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="block__wrapper">
                             <div class="block">
                                 <img src="https://randomuser.me/api/?gender=female" alt="">
-                                <div>
-                                    <h2>Victoria Chambers</h2>
-                                    <p>liked the post for Facebooks 2016 changes.</p>
-                                    <span>10/15/15</span>
+                                <div>                                    
+                                    <p><span class="block__member">Victoria Chambers</span> liked the post for Facebooks 2016 changes.</p>
+                                    <strong>5 hours ago</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="block__wrapper">
                             <div class="block">
                                 <img src="https://randomuser.me/api/?gender=female" alt="">
-                                <div>
-                                    <h2>Victoria Chambers</h2>
-                                    <p>commented on posts for 2016 changes.</p>
-                                    <span>10/15/15</span>
+                                <div>                                    
+                                    <p><span class="block__member">Victoria Chambers</span> commented on posts for 2016 changes.</p>
+                                    <strong>5 hours ago</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="block__wrapper">
                             <div class="block">
                                 <img src="https://randomuser.me/api/?gender=female" alt="">
-                                <div>
-                                    <h2>Victoria Chambers</h2>
-                                    <p>posted on your app's seo tips</p>
-                                    <span>10/15/15</span>
+                                <div>                                    
+                                    <p><span class="block__member">Victoria Chambers</span> posted on your app's seo tips</p>
+                                    <strong>1 day ago</strong>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- end member activity -->
-                </div>
+               </div>
                 <!-- end row -->
                 <div class="row">
                     <div class="col-6 border">
@@ -367,17 +363,17 @@
         for (var i = 0; i < 9; i++) {
           var name = data.results[i]['name']['first'] + " " + data.results[i]['name']['last'];
           
-          if (i < 8 ) {
-            document.querySelectorAll('.block img')[i].src = data.results[i]['picture']['medium'];
-            document.querySelectorAll('.block h2')[i].innerHTML = name;
             if (i < 4) {
+              document.querySelectorAll('.block img')[i].src = data.results[i]['picture']['medium'];
               document.querySelectorAll('.block a')[i].innerHTML = data.results[i]['email'];
-            }
-            document.querySelectorAll('.block span')[i].innerHTML = moment(data.results[i]['registered']).format('MM/DD/YYYY');
-          
-          } else {
-            document.querySelectorAll('.account img')[0].src = data.results[i]['picture']['medium'];  
-            document.querySelectorAll('.account span')[0].innerHTML = name; 
+              document.querySelectorAll('.block h2')[i].innerHTML = name;
+              document.querySelectorAll('.block span')[i].innerHTML = moment(data.results[i]['registered']).format('MM/DD/YYYY');              
+            } else if (i < 8) {
+              document.querySelectorAll('.block img')[i].src = data.results[i]['picture']['medium'];
+              document.querySelectorAll('.block span')[i].innerHTML = name;
+            }  else {
+            document.querySelectorAll('.account__avatar img')[0].src = data.results[i]['picture']['medium'];  
+            document.querySelectorAll('.account__avatar span')[0].innerHTML = name; 
           }
           //document.querySelectorAll('.block p')[i].prepend(name + " ");
         }        
