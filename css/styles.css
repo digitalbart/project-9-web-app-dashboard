@@ -374,11 +374,17 @@ svg {
 }
 
 .activity .block {
-    padding: 1em 2em 1em 1em;
+    padding: 1em;
 }
 
 .block__wrapper:last-child .block {
     border-bottom: 0;
+}
+
+.block__wrapper strong {
+    color: #333;
+    font-size: 0.75em;
+    font-weight: normal;
 }
 
 .block img {
@@ -586,10 +592,9 @@ a:hover {
         padding: 0 1em 0;        
     }
 
-    .block__wrapper strong {
-        color: #333;
-        font-size: 0.75em;
-        font-weight: normal;
+    .block,
+    .activity .block {
+        padding: 1em 1em 1em 0;
     }
 
     .activity .block__wrapper .block::after {
