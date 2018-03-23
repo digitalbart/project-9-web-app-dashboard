@@ -295,8 +295,12 @@ p {
     border: 1px solid #ddd;
     margin: 1em 1em 2em;
     padding: 1em;
+    overflow: auto;
 }
 
+.social div {
+    float: left;
+}
 
 svg {
     display: none;
