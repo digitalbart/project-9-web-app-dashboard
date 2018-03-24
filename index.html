@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1><strong>Your</strong>App<sup>&trade;</sup></h1>
         <div class="account">
           <a href="" class="account__notify"><img src="icons/icon-bell.svg" alt="Alerts"></a>
-          <a href="" class="account__avatar"> <img src=""><span>Josh Sullivan</span></a>
+          <a href="" class="account__avatar"> <img src="http://fillmurray.com/30/30"><span>Josh Sullivan</span></a>
         </div>
     </header>
     <main>
@@ -39,28 +39,25 @@
                                 <li><a href="">Daily</a></li>
                                 <li class="active"><a href="">Weekly</a></li>
                                 <li><a href="">Monthly</a></li>
-                            </ul>
-                            <!--                     <canvas id="traffic_hourly" style="position: relative; height:40vh; width:80vw"></canvas>
-                      <canvas id="traffic_daily" style="position: relative; height:40vh; width:80vw"></canvas> -->
+                            </ul>                        
                             <canvas id="traffic_weekly" style="position: relative; height:40vh; width:80vw"></canvas>
-                            <!--               <canvas id="traffic_monthly" style="position: relative; height:40vh; width:80vw"></canvas> -->
                         </div>
                     </div>
                 </div>
                 <!-- end traffic -->
-                <div class="row">
-                    <div class="col-6">
-                        <div class="chart border">
+                <div class="row">                    
+                      <div class="col-6 border">
+                          <div class="chart">
                             <h2 class="heading">Daily Traffic</h2>
                             <canvas id="traffic_daily" style="position: relative; height:40vh; width:80vw"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="chart border">
+                          </div>
+                      </div>                                      
+                      <div class="col-6  border">
+                          <div class="chart">
                             <h2 class="heading">Mobile Users</h2>
                             <canvas id="mobile_users" style="position: relative; height:40vh; width:80vw"></canvas>
-                        </div>
-                    </div>
+                          </div>
+                      </div>                    
                 </div>
                 <!-- end mobile users -->
                 <div class="row">
@@ -127,7 +124,7 @@
                 <!-- end of social media -->
                 <!-- new members -->
                 <div class="row">
-                    <div class="col-6 border">
+                    <div class="col-6 border border__no-bottom">
                         <h2 class="heading">New Members</h2>
                         <div class="block__wrapper">
                             <div class="block">
@@ -171,7 +168,7 @@
                         </div>
                     </div>
                     <!-- end 6 -->
-                    <div class="col-6 border activity">
+                    <div class="col-6 border border__no-bottom activity">
                         <h2 class="heading">Recent Activity</h2>
                         <div class="block__wrapper">
                             <div class="block">
@@ -214,7 +211,7 @@
                </div>
                 <!-- end row -->
                 <div class="row">
-                    <div class="col-6 border">
+                    <div class="col-6 border border__no-bottom">
                         <h2 class="heading">Message User</h2>
                         <form action="" class="form member_search">
                             <input type="text" name="user" placeholder="Search for User">

@@ -281,6 +281,15 @@ p {
     border: 1px solid #e4e2e2;
 }
 
+.border__no-bottom {
+    border-bottom: none;
+}
+
+
+.border:nth-of-type(3n) {
+    border-bottom: none;
+}
+
 [class^="col-"]:nth-child(n+2).border {
     margin-left: -1px;
 }
@@ -312,10 +321,10 @@ svg {
     display: inline-block;
     fill: white;
     float: left;
-    height: 70px;
-    margin-right: 1em;    
+    height: 50px;
+    margin-right: 0.5em;  
     vertical-align: text-top;
-    width: 70px;
+    width: 50px;    
 }
 
 .social__heading {
@@ -329,7 +338,7 @@ svg {
 
 .social__stats {
     color: #7b7b7b;
-    font-size: 200%;
+    font-size: 150%;
     font-weight: 300;
     line-height: 1em;
 }
@@ -373,8 +382,8 @@ svg {
     padding: 1em;
 }
 
-.activity .block {
-    padding: 1em;
+.activity .block {    
+    padding: 1em 2em 1em 1em
 }
 
 .block__wrapper:last-child .block {
@@ -416,7 +425,6 @@ svg {
 }
 
 .block span {
-    /** add media query */
     font-size: 10px;
 }
 
@@ -430,6 +438,10 @@ svg {
 
 .block>div {
     padding-left: calc(40px + 1em);
+}
+
+.row .block__wrapper:last-child .block {
+    border-bottom: 0;
 }
 
 form.form {
@@ -518,8 +530,17 @@ button.cancel {
     box-shadow: inset 0 0 0 30px #7379bd;
 }
 
+.switch-ios.switch-light a {
+    top: 0.25em;
+    width: 1.5em;
+    height: 1.5em;
+}
+
 .switch-ios.switch-light input:checked~span a {
-    border-color: #7379bd;
+    border-color: #d4d4d4;
+}
+.switch-ios.switch-light input:checked ~ span a {
+    margin-left: -1.85em;
 }
 
 
@@ -585,6 +606,11 @@ a:hover {
     header h1 {
         padding: 0 1em;
         font-size: 200%;    
+        font-weight: 300;
+    }
+
+    h1 sup {
+        font-size: 1rem;
     }
 
     .block__wrapper {
@@ -613,6 +639,10 @@ a:hover {
         top: 1em;
     }
 
+    .activity .block {
+        padding: 1em 2em 1em 0;
+    }
+
     .switch-ios.switch-light strong {        
         font-size: 1em;
     }
@@ -633,5 +663,26 @@ a:hover {
     .button__end {
         width: calc(100% - 1em);
     }    
+    
+    .social__heading {
+        font-size: 115%;
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    
+    .social svg {
+        height: 70px;
+        width: 70px;    
+        margin-right: 1em;        
+    }
+
+    .social__heading {
+        font-size: 150%;
+    }
+    .social__stats {
+        font-size: 225%;
+    }
 
 }
