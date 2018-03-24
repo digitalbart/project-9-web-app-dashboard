@@ -137,8 +137,8 @@ main nav li.active:before {
     top: 0;
     height: 100%;
     width: 3px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 main nav li.active img {
