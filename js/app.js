@@ -62,6 +62,12 @@ var trafficWeeklyChart = document.getElementById("traffic_weekly");
               pointStyle: 'circle'
           }],
       },
+      options: {
+          responsive: true,
+          legend: {
+            position: 'right'
+          }
+      }    
   });
 
   function formatDate(date) {
