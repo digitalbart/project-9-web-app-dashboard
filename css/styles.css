@@ -12,8 +12,7 @@
 }
 
 
-/** simple grid */
-
+/** simple grid **/
 .row {
     clear: both;
     overflow: hidden;
@@ -32,18 +31,13 @@ strong {
     font-weight: bold;
 }
 
-
 header {
     align-items: center;
+    background-color: #7479BD;
+    color: white;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-}
-
-
-header {
-    background-color: #7479BD;
-    color: white;
     position: relative;
     width: 100%;
 }
@@ -141,6 +135,10 @@ main nav li.active:before {
     left: 0;
     position: absolute;
     top: 0;
+    height: 100%;
+    width: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 main nav li.active img {
@@ -157,7 +155,6 @@ main nav li img {
     min-width: 15px;
     opacity: 0.5;
 }
-
 
 .search {
     border-radius: 5px;
@@ -270,7 +267,6 @@ main {
     margin-top: 1em;
 }
 
-
 p {
     margin: 35px auto 0;
     line-height: 2em;
@@ -284,7 +280,6 @@ p {
 .border__no-bottom {
     border-bottom: none;
 }
-
 
 .border:nth-of-type(3n) {
     border-bottom: none;
@@ -472,14 +467,12 @@ button {
     width: calc(100%);
 }
 
-
-
 button.cancel {
     background-color: #b2b2b2;
 }
 
 .success {
-    background-color: #b2b2b2;
+    background-color: limegreen;
     border: 1px solid #ddd;
     color: #fff;
     margin: 1em;
@@ -489,6 +482,10 @@ button.cancel {
     border-radius: 5px;    
 }
 
+.success a {
+    color: #fff;
+    }
+
 .success.sent {    
     opacity: 1;
 }
@@ -497,7 +494,6 @@ button.cancel {
 .button__end {
     margin: 1em 0 0 0;
 }
-
 
 .switch-ios.switch-light {
     position: relative;
@@ -543,8 +539,6 @@ button.cancel {
     margin-left: -1.85em;
 }
 
-
-
 a {
     text-decoration: none;
     color: #39add1;
@@ -555,8 +549,7 @@ a:hover {
     color: #111;
 }
 
-
-
+/** table break point */
 @media (min-width: 769px) {
 
     [class^="col-"] {
@@ -670,6 +663,7 @@ a:hover {
     
 }
 
+/** desktop break point */
 @media (min-width: 1024px) {
     
     .social svg {
